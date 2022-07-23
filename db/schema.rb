@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2022_07_22_061709) do
     t.text "name"
     t.text "image"
     t.text "speciality"
+    t.text "email"
+    t.text "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 2022_07_22_061709) do
     t.text "image"
     t.text "email"
     t.text "favourite"
+    t.text "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
