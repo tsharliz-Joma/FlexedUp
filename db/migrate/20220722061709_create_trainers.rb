@@ -6,7 +6,7 @@ class CreateTrainers < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.text :speciality
       t.text :email
-      t.text :password
+      t.string :password_digest
 
       t.timestamps
     end

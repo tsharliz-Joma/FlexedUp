@@ -11,9 +11,21 @@
 
   <body>
   <nav>
-    <%= link_to 'Sign in', users_path %>
-    <%= link_to 'Sign up', new_user_path %>
+  <%= link_to "Home" , root_path %>
+
+    <% if @current_trainer.present? %>
+      <%= link_to "All Users", users_path %>
+      <%= link_to "All Trainers", trainers_path %>
+      <%= link_to "Logout #{ @current_trainer.name }", login_path, :method => 'delete' %>
+    <% elsif @current_user.present? %>
+      <%= link_to "All trainers", trainers_path %>
+      <%= link_to "Logout #{ @current_user.name }"%>
+    <% else %>
+        <%= link_to 'Sign in', login_path %>
+        <%= link_to 'Sign up', new_user_path %>
+  <% end %>
   </nav>
+
     <%= yield %>
 
   </body>

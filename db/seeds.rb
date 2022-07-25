@@ -12,12 +12,12 @@ puts "#{ User.count } users Created "
 
 Trainer.destroy_all 
 
-t1 = Trainer.create :name => "Action Jackson", :image => "https://ultimateactionmovies.com/wp-content/uploads/2019/04/ACTION-JACKSON.jpg", :speciality => "Jabs", :admin => true
-t2 = Trainer.create :name => "The Rapter Raymond", :image => "https://pbs.twimg.com/media/DbAZrQ7W0AALS03.jpg" , :speciality => "Slippery manuvers", :admin => true
-t3 = Trainer.create :name => "LazerBeem Larry", :image => "https://static.wikia.nocookie.net/xmenmovies/images/d/d3/Cyclops_04.jpg/revision/latest?cb=20140330215941" , :speciality => "Math Abs", :admin => true
-t4 = Trainer.create :name => "Chubby chuck" , :image => "https://pbs.twimg.com/media/C8WsR_kUwAAhdLw.jpg" , :speciality => "Chips and dips"
-t5 = Trainer.create :name => "Rolled up Robert", :image => "https://i.kym-cdn.com/photos/images/newsfeed/001/124/447/054.jpg", :speciality => "Spaced out Hooks", :admin => true
-t6 = Trainer.create :name => "Meat head Memphis", :image => "https://static.wikia.nocookie.net/heroes-of-the-characters/images/7/75/Memphis%27_close_up.png/revision/latest?cb=20200530115609", :speciality => "Moves likes Jagger", :admin => true
+t1 = Trainer.create :name => "Action Jackson", :image => "https://ultimateactionmovies.com/wp-content/uploads/2019/04/ACTION-JACKSON.jpg", :speciality => "Jabs", :email => "jacko@ga.com", :password => "chicken", :admin => true
+t2 = Trainer.create :name => "The Rapter Raymond", :image => "https://pbs.twimg.com/media/DbAZrQ7W0AALS03.jpg" , :speciality => "Slippery manuvers", :email => "jacko1@ga.com", :password => "chicken", :admin => true
+t3 = Trainer.create :name => "LazerBeem Larry", :image => "https://static.wikia.nocookie.net/xmenmovies/images/d/d3/Cyclops_04.jpg/revision/latest?cb=20140330215941" , :speciality => "Math Abs", :email => "jacko2@gamil.com", :password => "chicken", :admin => true
+t4 = Trainer.create :name => "Chubby chuck" , :image => "https://pbs.twimg.com/media/C8WsR_kUwAAhdLw.jpg" , :speciality => "Chips and dips", :email => "jacko3@ga.com", :password => "Chicken", :admin => true
+t5 = Trainer.create :name => "Rolled up Robert", :image => "https://i.kym-cdn.com/photos/images/newsfeed/001/124/447/054.jpg", :speciality => "Spaced out Hooks", :email => "jacko4@gmail.com", :password => "chicken", :admin => true
+t6 = Trainer.create :name => "Meat head Memphis", :image => "https://static.wikia.nocookie.net/heroes-of-the-characters/images/7/75/Memphis%27_close_up.png/revision/latest?cb=20200530115609", :speciality => "Moves likes Jagger", :email => "jacko6@ga.com", :password => "chicken", :admin => true
 
 
 puts "#{ Trainer.count } Trainers Created"
@@ -31,42 +31,24 @@ b3 = Booking.create :tnd => "2022-12-16" , :location => "Warragul"
 puts "#{ Booking.count } Bookings created "
 # ASSOCIATIONS #################
 
-
 # Trainers has_many users
 puts "Trainers and Users"
 t1.users << u1  # assigning user1 and user2 to trainer 1
-t2.users << u2 # user3 and user 4 and belong to trainer2
-t3.users << u3  # trainer 
+t2.users << u2  # user3 and users 4 and belong to trainer2
+t3.users << u3  
 t4.users << u4
 t5.users << u5
 t6.users << u6
-# Users and traines 
 
-puts "Users and trainers "
-u1.trainers << t1 
-u2.trainers << t2
-u3.trainers << t3
-u5.trainers << t4
-u4.trainers << t5
-u6.trainers << t6 
 
 # trainers has_many bookings
-
-puts ""
+puts "Trainers and Bookings"
 t1.bookings << b1
 t2.bookings << b2
 t3.bookings << b3
 t4.bookings << b1
 t5.bookings << b2
 t6.bookings << b3
-
-
-#Bookings has_many users 
-puts "Users and Bookings"
-b1.trainers << t1  # Because trainer1 already has users 1 and 2 assigned to him so b1 will have trainer1 and user1 , user2
-b2.trainers << t2  # trainer2 has user3 and user4 assigned to him, so booking 2 has t2, u2,u3
-b3.trainers << t3 # trainer3 << u5 << u6 , b3 = trainer3 << u5 << u6
-
 
 
 
