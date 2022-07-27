@@ -2,6 +2,8 @@ class BookingsController < ApplicationController
     before_action :fetch_user
     before_action :check_for_login
 
+    
+
     def index
         @booking = Booking.all
     end
@@ -11,9 +13,9 @@ class BookingsController < ApplicationController
     end
 
     def create 
-        @booking = Booking.new booking_params
+        @booking = Booking.create booking_params
         if @booking
-            @booking.save
+            @current_user.bookings << @booking
             redirect_to @booking
         else 
             render :new

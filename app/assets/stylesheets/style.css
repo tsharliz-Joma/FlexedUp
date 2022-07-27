@@ -1,13 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap');
 
-body {
-    
+body h1 {
+    font-weight: bold;
+    color: grey;
     font-family: 'Monda', sans-serif;
+}
+
+
+
+.homeTextImgDisplay {
+    margin: 100px 0;
+    padding: 50px 0;
+    line-height: 2em;
+    transition: transform .5s;
+}
+
+.homeTextImgDisplay:hover {
+    background-color: lightgrey;
+    border-radius: 5px;
+    transform: scale(1.05)
 }
 
 .homePageHeading, footer {
     padding: 100px 0px;
     background-color: black;
+}
+
+footer {
+    height: 500px;
+}
+
+.blue, .red .green {
+    height: 100px;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.red{
+    background-color: brown;
+}
+
+.green{
+    background-color: green;
+}
+
+.grey {
+    color: grey;
+}
+
+footer ul {
+    padding: 10px 0;
+    font-size: 1.25em;
 }
 
 .container {
@@ -22,6 +67,10 @@ ul, ul li {
     padding-left: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
 /*
 .bookings select {
     display: none;
@@ -32,7 +81,15 @@ ul, ul li {
 }
 
 .homeImgContainer {
-    height: 600px;
+    height: 700px;
+    margin: 100px 0;
+    transition: transform .9s;
+}
+
+.homeImgContainer:hover{
+    opacity: .9;
+    transform: scale(1.02);
+    background-color: lightgrey;
 }
 
 .trainersContainer {

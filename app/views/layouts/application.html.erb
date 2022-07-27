@@ -15,13 +15,21 @@
 
   <nav>
 
-    <%= link_to "Home" , root_path, :class => 'btn' %>
-    <%= link_to "See Our Trainers", trainers_path, :class => 'btn'%>
-    <%= link_to 'Member Login', login_path, :class => 'btn' %>
-    <%= link_to "Book Session", new_booking_path, :class => 'btn'%>
-    <%# <%= link_to "My Profile", user_session_path(:id), :class => 'btn' %> %>
-    <%= link_to "Logout", login_path, :method => 'delete', :class => 'btn'%>
-    <%= link_to 'Sign up', new_user_path , :class => 'btn'%>
+    <span><%= link_to "Home" , root_path, :class => 'btn' %></span>
+    <span><ion-icon name="people"></ion-icon><%= link_to "See Our Trainers", trainers_path, :class => 'btn'%></span>
+    <% if @current_user.present?  %>
+    <span><ion-icon name="person-circle-outline"></ion-icon><%= link_to "Book Session", new_booking_path, :class => 'btn'%></span>
+    <% else %>
+    <span><ion-icon name="person"></ion-icon><%= link_to 'Member Login', login_path, :class => 'btn' %></span>
+    <% end %>
+    <%# <%= link_to "My Profile", user_session_path(:id), :class => 'btn' %>
+    <% if @current_user.present? %>
+    <span><ion-icon name="person-remove"></ion-icon><%= link_to "Logout", login_path, :method => 'delete', :class => 'btn'%></span>
+    <% else %>
+    <span><ion-icon name="person-add"></ion-icon><%= link_to 'Sign up', new_user_path , :class => 'btn'%></span>
+    <% end %>
+    
+    <% raise "hell" %>
 
   </nav>
 
@@ -29,5 +37,7 @@
     <%= yield %>
 
   </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>
