@@ -12,5 +12,18 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+//= require jquery
 //= require_tree .
+
+console.log("Hello")
+
+const carouselElement = document.querySelector('#carousel-container')
+const carousel = new bootstrap.Carousel(carouselElement, {
+    interval: 2000,
+    wrap: true,
+    pause: false
+});
+
+
+
+

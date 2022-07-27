@@ -2,11 +2,11 @@
 User.destroy_all 
 
 u1 = User.create :name => "Julio Cesar Chavez", :image => "https://www.ringtv.com/wp-content/uploads/2012/02/file_171349_1_Julio_Cesar_Chavez.jpg", :email => "lightweight@ga.com", :password => "chicken", :favourite => "Big F"
-u2 = User.create :name => "Pernell Whitaker", :image => "https://www.sportsnet.ca/wp-content/uploads/2019/07/Pernell-Whitaker-leans-away-from-Oscar-De-La-Hoya-punch.jpg", :email => "sweetpea@ga.com" ,:password => "chicken"
-u3 = User.create :name => "James Toney", :image => "https://media.gettyimages.com/photos/james-toney-gets-ready-in-the-ring-against-mike-mccallum-during-the-picture-id178191958?s=612x612", :email => "lightsout@ga.com", :password => "chicken"
-u4 = User.create :name => "Roy Jones Jr", :image => "https://www.gannett-cdn.com/-mm-/2acf57b34d27657e143fdc5cdcc52016b303f52b/c=0-29-2132-1233/local/-/media/2018/02/06/Pensacola/Pensacola/636535355205467767-JONES2.jpg", :email => "cantbetouched@ga.com", :password => "chicken"
-u5 = User.create :name => "Prince Naseem Hamed", :image => "https://www.ringtv.com/wp-content/uploads/2015/06/Hamed-Vazquez-Photo-by-John-Gichigi-Allsport.jpg", :email => "prince@ga.com" , :password => "chicken"
-u6 = User.create :name => "Devn Haney", :image => "https://s3.us-west-1.amazonaws.com/boxeomundial.com/wp-content/uploads/2019/01/12115920/Devin-Haney.jpg" , :email => "thedream@ga.com" , :password => "chicken"
+u2 = User.create :name => "Pernell Whitaker", :image => "https://www.sportsnet.ca/wp-content/uploads/2019/07/Pernell-Whitaker-leans-away-from-Oscar-De-La-Hoya-punch.jpg", :email => "sweetpea@ga.com" ,:password => "chicken", :favourite =>  "Zab Judah"
+u3 = User.create :name => "James Toney", :image => "https://media.gettyimages.com/photos/james-toney-gets-ready-in-the-ring-against-mike-mccallum-during-the-picture-id178191958?s=612x612", :email => "lightsout@ga.com", :password => "chicken", :favourite => "Gregory Owens"
+u4 = User.create :name => "Roy Jones Jr", :image => "https://www.gannett-cdn.com/-mm-/2acf57b34d27657e143fdc5cdcc52016b303f52b/c=0-29-2132-1233/local/-/media/2018/02/06/Pensacola/Pensacola/636535355205467767-JONES2.jpg", :email => "cantbetouched@ga.com", :password => "chicken", :favourite =>  "Roy Jones Sr."
+u5 = User.create :name => "Prince Naseem Hamed", :image => "https://www.ringtv.com/wp-content/uploads/2015/06/Hamed-Vazquez-Photo-by-John-Gichigi-Allsport.jpg", :email => "prince@ga.com" , :password => "chicken", :favourite =>  "Brendan Ingle"
+u6 = User.create :name => "Devn Haney", :image => "https://s3.us-west-1.amazonaws.com/boxeomundial.com/wp-content/uploads/2019/01/12115920/Devin-Haney.jpg" , :email => "thedream@ga.com" , :password => "chicken", :favourite =>  "Yoel Judah"
 
 puts "#{ User.count } users Created "
 
@@ -22,33 +22,25 @@ t6 = Trainer.create :name => "Meat head Memphis", :image => "https://static.wiki
 
 puts "#{ Trainer.count } Trainers Created"
 
-Booking.destroy_all
+Session.destroy_all
 
-b1 = Booking.create :tnd => "2022-07-29" , :location => "Wonthaggi"
-b2 = Booking.create :tnd => "2022-08-25" , :location => "Leongtha"
-b3 = Booking.create :tnd => "2022-12-16" , :location => "Warragul"
+s1 = Session.create :date => "2022-07-29" , :location => "Wonthaggi" 
+s2 = Session.create :date => "2022-08-25" , :location => "Leongtha"
+s3 = Session.create :date => "2022-12-16" , :location => "Warragul"
 
-puts "#{ Booking.count } Bookings created "
+puts "#{ Session.count } Bookings created "
 # ASSOCIATIONS #################
-
-# Trainers has_many users
-puts "Trainers and Users"
-t1.users << u1  # assigning user1 and user2 to trainer 1
-t2.users << u2  # user3 and users 4 and belong to trainer2
-t3.users << u3  
-t4.users << u4
-t5.users << u5
-t6.users << u6
-
 
 # trainers has_many bookings
 puts "Trainers and Bookings"
-t1.bookings << b1
-t2.bookings << b2
-t3.bookings << b3
-t4.bookings << b1
-t5.bookings << b2
-t6.bookings << b3
+t1.sessions << s1
+t2.sessions << s2
+t3.sessions << s3
+t4.sessions << s1
+t5.sessions << s2
+t6.sessions << s3
+
+
 
 
 

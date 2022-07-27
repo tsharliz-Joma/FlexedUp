@@ -1,0 +1,11 @@
+
+<h1> Log in </h1> <!--Name this somthing else-->
+
+<%= form_tag user_session_path(:id) do %> <!-- This is an erb tag the renders a form -->
+    <%= label_tag :email %>
+    <%= email_field_tag :email %>
+
+    <%= label_tag :password %>
+    <%= password_field_tag :password%>
+    <%= submit_tag "Sign in"  %>
+<% end %>

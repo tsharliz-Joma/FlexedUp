@@ -1,0 +1,17 @@
+<h1> New Path: new_booking_path @ bookings#new</h1>
+
+<%= form_for @booking do |f| %>
+<select id="location">
+        <% Session.pluck(:location).uniq.each do |location| %>
+            <option> <%= location %> </option>
+        <% end %>
+     </select>
+<div class="sessions" >
+  <% Session.all.group_by(&:location).each do |location,sessions|%>
+        <%= location %>
+        <%= f.select :session_id , sessions.pluck(:date,:id), {}, {:id => location} %>
+      <% end %>
+
+      <%= f.submit %>
+  <% end %>
+</div>

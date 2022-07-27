@@ -1,0 +1,47 @@
+<h1> Index Path: bookings_path @ bookings#index</h1>
+
+<h3>Show All bookings here (Maybe a picture of a timetable with slots available)</h3>
+<hr>
+    <div class="time-table">
+
+    </div>
+<hr>
+<h3>Then a drop down menu where you can select one of the times available</h3>
+
+<hr>
+<ul>
+    <label for="location">Select a Location: </label>
+    
+
+     <label for="date"> Select a Date: </label>
+     
+     <select name="date">
+        <% @booking.each do |b|%>
+            <option> Date: <%= b.tnd %></option>
+        <% end %>
+     </select>
+
+     <label for="time"> Available Times: </label>
+     <select name="time">
+        <option>Add Column to table </option>
+        <option>That has times available </option>
+        <option>For every date and </option>
+        <option>Every Location </option>
+     </select>
+
+     <hr>
+
+     <label for="trainer"> Trainers Available: </label>
+     <select name="trainer">
+        <option>And Also Certain</option>
+        <option>Trainers Available</option>
+        <option>For Every Session</option>
+     </select>
+</ul>
+
+<button class="btn btn-outline-dark" > Book </button>
+
+<hr>
+
+Each Booking will have a link <%= link_to booking_path(:id)%> to that indiviual Booking that will take you to 
+Bookings show page OR actually a submit button sends you to the booking_path 

@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
-    before_action :fetch_trainer
     before_action :fetch_user
-
- 
+    
     def fetch_user # Function 
         #variable that holds the current user by finding the user by the :id , check the session:id 
         @current_user = User.find_by :id => session[:user_id] if session[:user_id].present? # if the current session[user_id] is present
@@ -15,10 +13,11 @@ class ApplicationController < ActionController::Base
     end
     
     def check_for_login  
-        redirect_to login_path unless @current_user.present? || @current_trainer.present?
+        redirect_to login_path unless @current_user.present?
     end
 
+
     def check_for_admin
-        redirect_to login_path unless (@current_user.present? && @current_user.admin?) || (@current_trainer.present? && @current_trainer.admin?)
+        redirect_to login_path unless @current_trainer.present?
     end
 end 

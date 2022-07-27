@@ -10,24 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_23_050539) do
+ActiveRecord::Schema.define(version: 2022_07_26_021035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.date "tnd"
-    t.text "location"
-    t.integer "trainer_id"
+    t.integer "session_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "date"
+    t.text "location"
+    t.integer "trainer_id"
+  end
+
   create_table "trainers", force: :cascade do |t|
     t.text "name"
     t.text "image"
-    t.integer "user_id"
     t.text "speciality"
     t.text "email"
     t.string "password_digest"
@@ -41,8 +44,6 @@ ActiveRecord::Schema.define(version: 2022_07_23_050539) do
     t.text "image"
     t.text "email"
     t.text "favourite"
-    t.integer "trainer_id"
-    t.integer "booking_id"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

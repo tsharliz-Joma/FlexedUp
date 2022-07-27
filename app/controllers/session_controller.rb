@@ -1,19 +1,43 @@
 class SessionController < ApplicationController
+  # before_action :fetch_user
+
   def new
   end
 
+  def index
+    @trainers = Trainer.all 
+  end
+
+  def new
+    @trainer = Trainer.new
+  end
+
+  def show
+    @trainer = Trainer.find params[:id]
+  end
+
+  def edit 
+    @trainer = Trainer.find params[:id]
+  end
+
+  def update
+    trainer = Trainer.find params[:id]
+    trainer.update trainer_params
+    redirect_to trainer 
+  end
+
   def create
-    trainer = Trainer.find_by :email => params[:email]
-    if trainer.present? && trainer.authenticate(params[:password])
-      session[:trainer_id] = trainer.id
-      redirect_to trainer_path trainer.id # This will take you to session#index 
+    user = User.find_by :email => params[:email]
+    if user.present? && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to new_booking_path #user.id # This will take you to session#index 
     else 
       redirect_to root_path # This will take you to users#index.html 
     end
   end
 
   def destroy
-    session[:trainer_id] = nil 
+    session[:user_id] = nil 
     redirect_to root_path
   end
 
