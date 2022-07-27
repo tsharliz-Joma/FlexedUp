@@ -12,33 +12,36 @@ puts "#{ User.count } users Created "
 
 Trainer.destroy_all 
 
-t1 = Trainer.create :name => "Action Jackson", :image => "https://ultimateactionmovies.com/wp-content/uploads/2019/04/ACTION-JACKSON.jpg", :speciality => "Jabs", :email => "jacko@ga.com", :password => "chicken", :admin => true
-t2 = Trainer.create :name => "The Rapter Raymond", :image => "https://pbs.twimg.com/media/DbAZrQ7W0AALS03.jpg" , :speciality => "Slippery manuvers", :email => "jacko1@ga.com", :password => "chicken", :admin => true
-t3 = Trainer.create :name => "LazerBeem Larry", :image => "https://static.wikia.nocookie.net/xmenmovies/images/d/d3/Cyclops_04.jpg/revision/latest?cb=20140330215941" , :speciality => "Math Abs", :email => "jacko2@gamil.com", :password => "chicken", :admin => true
-t4 = Trainer.create :name => "Chubby chuck" , :image => "https://pbs.twimg.com/media/C8WsR_kUwAAhdLw.jpg" , :speciality => "Chips and dips", :email => "jacko3@ga.com", :password => "Chicken", :admin => true
-t5 = Trainer.create :name => "Rolled up Robert", :image => "https://i.kym-cdn.com/photos/images/newsfeed/001/124/447/054.jpg", :speciality => "Spaced out Hooks", :email => "jacko4@gmail.com", :password => "chicken", :admin => true
-t6 = Trainer.create :name => "Meat head Memphis", :image => "https://static.wikia.nocookie.net/heroes-of-the-characters/images/7/75/Memphis%27_close_up.png/revision/latest?cb=20200530115609", :speciality => "Moves likes Jagger", :email => "jacko6@ga.com", :password => "chicken", :admin => true
+t1 = Trainer.create :name => "Action Jackson", :image => "https://ultimateactionmovies.com/wp-content/uploads/2019/04/ACTION-JACKSON.jpg", :speciality => "Jabs", :email => "jacko@ga.com"
+t2 = Trainer.create :name => "The Rapter Raymond", :image => "https://pbs.twimg.com/media/DbAZrQ7W0AALS03.jpg" , :speciality => "Slippery manuvers", :email => "jacko1@ga.com"
+t3 = Trainer.create :name => "LazerBeem Larry", :image => "https://static.wikia.nocookie.net/xmenmovies/images/d/d3/Cyclops_04.jpg/revision/latest?cb=20140330215941" , :speciality => "Math Abs", :email => "jacko2@gamil.com"
+t4 = Trainer.create :name => "Chubby chuck" , :image => "https://pbs.twimg.com/media/C8WsR_kUwAAhdLw.jpg" , :speciality => "Chips and dips", :email => "jacko3@ga.com"
+t5 = Trainer.create :name => "Rolled up Robert", :image => "https://i.kym-cdn.com/photos/images/newsfeed/001/124/447/054.jpg", :speciality => "Spaced out Hooks", :email => "jacko4@gmail.com"
+t6 = Trainer.create :name => "Meat head Memphis", :image => "https://static.wikia.nocookie.net/heroes-of-the-characters/images/7/75/Memphis%27_close_up.png/revision/latest?cb=20200530115609", :speciality => "Moves likes Jagger", :email => "jacko6@ga.com"
 
 
 puts "#{ Trainer.count } Trainers Created"
 
-Session.destroy_all
+Booking.destroy_all
 
-s1 = Session.create :date => "2022-07-29" , :location => "Wonthaggi" 
-s2 = Session.create :date => "2022-08-25" , :location => "Leongtha"
-s3 = Session.create :date => "2022-12-16" , :location => "Warragul"
+b1 = Booking.create :datetime => "2022-07-29" , :location => "Wonthaggi"
+b2 = Booking.create :datetime => "2022-08-12" , :location => "Wonthaggi" 
+b3 = Booking.create :datetime => "2022-09-05" , :location => "Leongtha"
+b4 = Booking.create :datetime => "2022-12-15" , :location => "Leongtha"
+b5 = Booking.create :datetime => "2022-01-16" , :location => "Warragul"
+b6 = Booking.create :datetime => "2022-07-30" , :location => "Warragul"
 
-puts "#{ Session.count } Bookings created "
+puts "#{ Booking.count } Bookings created "
 # ASSOCIATIONS #################
 
 # trainers has_many bookings
 puts "Trainers and Bookings"
-t1.sessions << s1
-t2.sessions << s2
-t3.sessions << s3
-t4.sessions << s1
-t5.sessions << s2
-t6.sessions << s3
+t1.bookings << b1 
+t2.bookings << b2 
+t3.bookings << b3
+t4.bookings << b1 
+t5.bookings << b2
+t6.bookings << b3
 
 
 

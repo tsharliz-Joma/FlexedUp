@@ -1,3 +1,6 @@
+
+
+<div class="trainersContainer">
 <h1> All Trainers </h1>
 
 <% @trainers.each do |trainer|  %> <!-- Loops through all trainers | and for every trainer, execute ? or rather everything within this loop can be treated as an individual trainer-->
@@ -16,6 +19,7 @@
             <%= link_to "Delete Trainer", trainer, :method => 'delete', :data => { :comfirmation => "Are you sure? " }%>
         </div>
     <% end %>
+    </div>
 
 
 

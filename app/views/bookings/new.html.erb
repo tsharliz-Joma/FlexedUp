@@ -2,16 +2,18 @@
 
 <%= form_for @booking do |f| %>
 <select id="location">
-        <% Session.pluck(:location).uniq.each do |location| %>
-            <option> <%= location %> </option>
-        <% end %>
-     </select>
-<div class="sessions" >
-  <% Session.all.group_by(&:location).each do |location,sessions|%>
-        <%= location %>
-        <%= f.select :session_id , sessions.pluck(:date,:id), {}, {:id => location} %>
-      <% end %>
+  <% Booking.pluck(:location).uniq.each do |location| %>
+    <option> <%= location %> </option>
+  <% end %>
+</select>
 
-      <%= f.submit %>
+<div class="bookings" >
+  <%# Booking.all.group_by(&:location).each do |location,bookings|%>
+        <%#= location %>
+        <%# f.select :booking_id, bookings.pluck(:date,:id), {}, {:id => location} %>
+      <%# end %>
+  <%= datetime_select("booking","datetime")%>
+
+  <%= f.submit %>
   <% end %>
 </div>

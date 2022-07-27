@@ -25,6 +25,8 @@ class BookingsController < ApplicationController
     end
 
     def show
+        # Grab the id of the booking  and access the trainer_id stored within that booking or 
+        # rather the 
         @booking = Booking.find params[:id]
     end
 
@@ -35,7 +37,7 @@ class BookingsController < ApplicationController
 
     private
     def booking_params 
-        params.require(:booking).permit(:location, :user_id, :session_id)
+        params.require(:booking).permit(:location, :user_id, :session_id, :datetime)
     end
 
 end

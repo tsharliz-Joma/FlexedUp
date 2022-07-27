@@ -3,11 +3,15 @@
 body {
     
     font-family: 'Monda', sans-serif;
+}
 
+.homePageHeading, footer {
+    padding: 100px 0px;
+    background-color: black;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1260px;
     margin: 0 auto;
     text-align: center;
 }
@@ -18,18 +22,20 @@ ul, ul li {
     padding-left: 20px;
 }
 
-.sessions select {
+/*
+.bookings select {
     display: none;
-}
+}*/
 
 .users {
     width: 1000px;
 }
 
-.homePageHeading {
-    padding: 100px 0px;
-}
-
 .homeImgContainer {
     height: 600px;
+}
+
+.trainersContainer {
+    width: 1000px;
+    margin: 0 auto;
 }
