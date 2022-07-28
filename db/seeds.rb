@@ -14,10 +14,10 @@ Trainer.destroy_all
 
 t1 = Trainer.create :name => "Action Jackson", :image => "https://ultimateactionmovies.com/wp-content/uploads/2019/04/ACTION-JACKSON.jpg", :speciality => "Jabs", :email => "jacko@ga.com"
 t2 = Trainer.create :name => "The Rapter Raymond", :image => "https://pbs.twimg.com/media/DbAZrQ7W0AALS03.jpg" , :speciality => "Slippery manuvers", :email => "jacko1@ga.com"
-t3 = Trainer.create :name => "LazerBeem Larry", :image => "https://static.wikia.nocookie.net/xmenmovies/images/d/d3/Cyclops_04.jpg/revision/latest?cb=20140330215941" , :speciality => "Math Abs", :email => "jacko2@gamil.com"
+t3 = Trainer.create :name => "LazerBeem Larry", :image => "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f49ff25e-0aa3-4ea3-846d-1ba121afbb32/dckseyx-bd9ee11e-8116-4766-b2c7-6f590e2748a0.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Y0OWZmMjVlLTBhYTMtNGVhMy04NDZkLTFiYTEyMWFmYmIzMlwvZGNrc2V5eC1iZDllZTExZS04MTE2LTQ3NjYtYjJjNy02ZjU5MGUyNzQ4YTAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.hVSIiw5JZ-1rsp7ef4qEn-SbsU880eb9LZI2H6nRkQw" , :speciality => "Math Abs", :email => "jacko2@gamil.com"
 t4 = Trainer.create :name => "Chubby chuck" , :image => "https://pbs.twimg.com/media/C8WsR_kUwAAhdLw.jpg" , :speciality => "Chips and dips", :email => "jacko3@ga.com"
 t5 = Trainer.create :name => "Rolled up Robert", :image => "https://i.kym-cdn.com/photos/images/newsfeed/001/124/447/054.jpg", :speciality => "Spaced out Hooks", :email => "jacko4@gmail.com"
-t6 = Trainer.create :name => "Meat head Memphis", :image => "https://static.wikia.nocookie.net/heroes-of-the-characters/images/7/75/Memphis%27_close_up.png/revision/latest?cb=20200530115609", :speciality => "Moves likes Jagger", :email => "jacko6@ga.com"
+t6 = Trainer.create :name => "Meat head Memphis", :image => "https://www.thefamouspeople.com/profiles/images/katt-williams-4.jpg", :speciality => "Moves likes Jagger", :email => "jacko6@ga.com"
 
 
 puts "#{ Trainer.count } Trainers Created"

@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
    # before_action :fetch_trainer
     before_action :fetch_user
-    before_action :check_for_login
- 
+
     def new
+        @user = User.new
     end
 
     def index
@@ -14,6 +14,15 @@ class UsersController < ApplicationController
         @user = User.find params[:id]
     end
 
+    def create
+        @user = User.new user_params
+        if @user.save 
+            redirect_to @user
+        else 
+            render :new
+        end
+    end 
+
     def show
         @user = User.find params[:id]
     end
@@ -21,7 +30,7 @@ class UsersController < ApplicationController
     def update
         user = User.find params[:id]
         user.update user_params
-        redirect_user 
+        redirect_to user
     end
 
     def destroy
@@ -32,6 +41,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :image, :email, :favourite, :password)
+        params.require(:user).permit(:name, :image, :email, :favourite, :password, :password_confirmation)
     end
 end

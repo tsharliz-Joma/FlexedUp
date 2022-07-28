@@ -1,14 +1,12 @@
 <h1> Register </h1>
 
-<% if @users.errors.any? %>
-<ol>
-    <% @users.errors.full_messages.each do |msg| %>
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
         <li> <%= msg %> </li>
         <% end %>
-    </ol>
 <% end %>
 
-<%= form_for new_user_path do |f|%> <!--if @user faults out use User.new-->
+<%= form_for @user do |f|%> <!--if @user faults out use User.new-->
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :email %>

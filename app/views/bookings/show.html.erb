@@ -3,21 +3,23 @@
 <div>
     Session Booked With:
     <div class="trainerBookingImg">
-    Your booking will be on the: <%= @booking.datetime %>
-    <br>
-    Access the current user trainer = <p><%= @booking.user.name #@riddle.user (to link the user profile) %> 
-    <br>
-    CSS:
-    Height: 300px?
-    <br>
-    Youll be training with......?
-    <br>
-    @booking[:trainer_id] or (Surprise)
+        <%= image_tag @booking.trainer.image %>
     </div>
-<hr>
+        <span class="black">On:</span> <%= @booking.datetime.strftime("%B %e, %Y") %> 
+        <span class="black">At:</span> <%= @booking.datetime.strftime("%H:%M:%S") %>
+    <hr>
+        <div class="gif-padding">
+            <span class="black">"<%= @booking.trainer.name %> At the ready "</span>
+        </div>
+    </div>
 
+    <div class="gif-padding">
+        <button class="btn btn-outline-dark">
+            <%= link_to "Confirm", root_path %>
+        </button>
+    </div>
 <div>
-    btn btn-outline-dark
+    
 
 
 

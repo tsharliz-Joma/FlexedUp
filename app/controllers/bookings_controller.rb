@@ -16,6 +16,8 @@ class BookingsController < ApplicationController
         @booking = Booking.create booking_params
         if @booking
             @current_user.bookings << @booking
+            random_trainer.bookings << @booking
+    
             redirect_to @booking
         else 
             render :new
@@ -42,4 +44,8 @@ class BookingsController < ApplicationController
         params.require(:booking).permit(:location, :user_id, :session_id, :datetime)
     end
 
+    def random_trainer
+        random_index = rand 6 
+        Trainer.all[random_index]
+    end
 end

@@ -31,8 +31,6 @@ class TrainersController < ApplicationController
     @trainer = Trainer.find params[:id]
   end
 
-  
-
   private 
   def trainer_params
     params.require(:trainer).permit(:name, :speciality ,:email, :password, :password_confirmation)
