@@ -1,7 +1,4 @@
 
-<!--This form was previous not working, is was previously set to @user but the value for 
-@user was returning nil and not allowing the form to render so now, User.new im assuming creates a new 
-user and therefor can render a value to make the form for-->
 <%= form_for @user do |f|%>
     <%= f.label :name %>
     <%= f.text_field :name%>
@@ -14,7 +11,6 @@ user and therefor can render a value to make the form for-->
     <%= f.label :password %>
     <%= f.password_field :password %>
     <%= f.submit %>
-    <!--I want to have a weight divison input field too-->
 <% end %>
 
     

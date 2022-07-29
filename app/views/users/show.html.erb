@@ -1,5 +1,4 @@
 
-
 <h1><%= @user.name %></h1>
 <%= image_tag @user.image, :class => "users" if @user.image.present? %>
 <ul>
@@ -7,7 +6,6 @@
     <li> Favourite Trainer: <%= @user.favourite %> </li>
     <li> Number of Bouts: </li>
 </ul>
-
 <div class="controls">
     <%= link_to "Edit profile", edit_user_path(@user)%>
     |
