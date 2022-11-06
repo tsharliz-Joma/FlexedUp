@@ -22,7 +22,7 @@ class SessionController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :favourite, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :favourite, :address, :password, :password_confirmation)
   end
 
 end
